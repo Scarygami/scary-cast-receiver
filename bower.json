@@ -1,0 +1,26 @@
+{
+  "name": "scary-cast-receiver",
+  "description": "Helper-element to develop Custom Google Cast Receivers",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Scarygami/scary-cast-receiver",
+  "authors": [
+    "Gerwin Sturm <scarygami@gmail.com>"
+  ],
+  "main": "scary-cast-receiver.html",
+  "keywords": [
+    "Cast",
+    "Google Cast",
+    "Polymer",
+    "web-components",
+    "web-component"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  }
+}

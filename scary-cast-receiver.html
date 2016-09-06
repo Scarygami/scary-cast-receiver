@@ -1,0 +1,48 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="cast-receiver-import.html">
+
+<!--
+`scary-cast-receiver`
+Helper element to develop Custom Google Cast Receivers
+
+@demo demo/index.html
+-->
+
+<dom-module id="scary-cast-receiver">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello Cast</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'scary-cast-receiver',
+
+      properties: {
+
+      },
+
+      ready: function () {
+        this._castReceiverManager = window.cast.receiver.CastReceiverManager.getInstance();
+        this._castReceiverManager.start();
+        this._castReceiverManager.onSenderDisconnected = this._onSenderDisconnected.bind(this);
+      },
+
+      _onSenderDisconnected: function (e) {
+        if (
+          this._castReceiverManager.getSenders().length === 0 &&
+          e.reason === window.cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER
+        ) {
+          window.close();
+        }
+      }
+
+    });
+  </script>
+</dom-module>
